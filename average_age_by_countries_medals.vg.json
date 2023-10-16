@@ -1,0 +1,79 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 170,
+  "height": 300,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+},
+    "data": {
+      "values": [
+        {"Country": "Australia", "Medal": "Gold", "AverageAge": 25},
+{"Country": "Australia", "Medal": "Silver", "AverageAge": 26},
+{"Country": "Australia", "Medal": "Bronze", "AverageAge": 26},
+{"Country": "China", "Medal": "Gold", "AverageAge": 24},
+{"Country": "China", "Medal": "Silver", "AverageAge": 25},
+{"Country": "China", "Medal": "Bronze", "AverageAge": 24},
+{"Country": "Germany", "Medal": "Gold", "AverageAge": 28},
+{"Country": "Germany", "Medal": "Silver", "AverageAge": 28},
+{"Country": "Germany", "Medal": "Bronze", "AverageAge": 27},
+{"Country": "France", "Medal": "Gold", "AverageAge": 29},
+{"Country": "France", "Medal": "Silver", "AverageAge": 27},
+{"Country": "France", "Medal": "Bronze", "AverageAge": 26},
+{"Country": "Great Britain", "Medal": "Gold", "AverageAge": 28},
+{"Country": "Great Britain", "Medal": "Silver", "AverageAge": 28},
+{"Country": "Great Britain", "Medal": "Bronze", "AverageAge": 27},
+{"Country": "Italy", "Medal": "Gold", "AverageAge": 27},
+{"Country": "Italy", "Medal": "Silver", "AverageAge": 29},
+{"Country": "Italy", "Medal": "Bronze", "AverageAge": 27},
+{"Country": "Japan", "Medal": "Gold", "AverageAge": 26},
+{"Country": "Japan", "Medal": "Silver", "AverageAge": 25},
+{"Country": "Japan", "Medal": "Bronze", "AverageAge": 26},
+{"Country": "Netherlands", "Medal": "Gold", "AverageAge": 26},
+{"Country": "Netherlands", "Medal": "Silver", "AverageAge": 27},
+{"Country": "Netherlands", "Medal": "Bronze", "AverageAge": 28},
+{"Country": "Russia", "Medal": "Gold", "AverageAge": 25},
+{"Country": "Russia", "Medal": "Silver", "AverageAge": 26},
+{"Country": "Russia", "Medal": "Bronze", "AverageAge": 26},
+{"Country": "United States", "Medal": "Gold", "AverageAge": 26},
+{"Country": "United States", "Medal": "Silver", "AverageAge": 26},
+{"Country": "United States", "Medal": "Bronze", "AverageAge": 26}
+
+      ]
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {"field": "Country", "type": "nominal", "axis": {"title": "Country"}},
+      "y": {"field": "AverageAge", "type": "quantitative", "axis": {"title": "Average Age"}},
+      "color": {
+        "field": "Medal",
+        "type": "nominal",
+        "scale": {
+            "domain": ["Gold", "Silver", "Bronze"],
+            "range": ["#FFD700", "#C0C0C0", "#CD7F32"]
+        },
+        "legend": {
+            "title": "Medal Type"
+        }
+    },
+      "column": {"field": "Medal", "type": "nominal", "sort": ["Gold", "Silver", "Bronze"]},
+      "tooltip": [
+        {
+            "field": "Country",
+            "type": "nominal",
+            "title": "Country"
+        },
+        {
+            "field": "Medal",
+            "type": "nominal",
+            "title": "Medal Type"
+        },
+        {
+            "field": "AverageAge",
+            "type": "quantitative",
+            "title": "Average Age"
+        }
+    ]
+    }
+  }
+  

@@ -1,0 +1,131 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 670,
+  "height": 400,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+},
+    "data": {
+      "values": [
+        {"Country": "Australia", "lower": 19, "q1": 22, "median": 25, "q3": 32, "upper": 65, "outliers": []},
+        {"Country": "Canada", "lower": 20, "q1": 23, "median": 26, "q3": 29, "upper": 65, "outliers": []},
+        {"Country": "China", "lower": 20, "q1": 21, "median": 24, "q3": 27, "upper": 53, "outliers": []},
+        {"Country": "France", "lower": 20, "q1": 23, "median": 26, "q3": 29, "upper": 53, "outliers": []},
+        {"Country": "Germany", "lower": 14, "q1": 20, "median": 26, "q3": 39, "upper": 45, "outliers": []},
+        {"Country": "Great Britain", "lower": 13, "q1": 22, "median": 26, "q3": 29, "upper": 50, "outliers": []},
+        {"Country": "Italy", "lower": 29, "q1": 33, "median": 38, "q3": 40, "upper": 48, "outliers": []},
+        {"Country": "Japan", "lower": 18, "q1": 22, "median": 25, "q3": 28, "upper": 71, "outliers": []},
+        {"Country": "Russia", "lower": 18, "q1": 22, "median": 25, "q3": 29, "upper": 56, "outliers": []},
+        {"Country": "United States", "lower": 18, "q1": 19, "median": 26, "q3": 29, "upper": 58, "outliers": []}
+      ]
+    },
+    "encoding": {
+      "y": {
+          "field": "Country",
+          "type": "nominal",
+          "title": null
+      }
+  },
+  "layer": [
+      {
+          "mark": {
+              "type": "rule"
+          },
+          "encoding": {
+              "x": {
+                  "field": "lower",
+                  "type": "quantitative",
+                  "scale": {
+                      "zero": false
+                  },
+                  "title": "Age"
+              },
+              "x2": {
+                  "field": "upper"
+              },
+              "tooltip": [
+                  {
+                      "field": "lower",
+                      "type": "quantitative",
+                      "title": "Lower Age"
+                  },
+                  {
+                      "field": "upper",
+                      "type": "quantitative",
+                      "title": "Upper Age"
+                  }
+              ]
+          }
+      },
+      {
+          "mark": {
+              "type": "bar",
+              "size": 14
+          },
+          "encoding": {
+              "x": {
+                  "field": "q1",
+                  "type": "quantitative"
+              },
+              "x2": {
+                  "field": "q3"
+              },
+              "color": {
+                  "field": "Country",
+                  "type": "nominal",
+                  "legend": null
+              },
+              "tooltip": [
+                  {
+                      "field": "q1",
+                      "type": "quantitative",
+                      "title": "1st Quartile"
+                  },
+                  {
+                      "field": "q3",
+                      "type": "quantitative",
+                      "title": "3rd Quartile"
+                  }
+              ]
+          }
+      },
+      {
+          "mark": {
+              "type": "tick",
+              "color": "white",
+              "size": 14
+          },
+          "encoding": {
+              "x": {
+                  "field": "median",
+                  "type": "quantitative"
+              },
+              "tooltip": [
+                  {
+                      "field": "median",
+                      "type": "quantitative",
+                      "title": "Median Age"
+                  }
+              ]
+          }
+      },
+      {
+          "transform": [
+              {
+                  "flatten": ["outliers"]
+              }
+          ],
+          "mark": {
+              "type": "point",
+              "style": "boxplot-outliers"
+          },
+          "encoding": {
+              "x": {
+                  "field": "outliers",
+                  "type": "quantitative"
+              }
+          }
+      }
+  ]
+}

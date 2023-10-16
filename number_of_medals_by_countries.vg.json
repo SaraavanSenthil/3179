@@ -1,0 +1,120 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 670,
+  "height": 420,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+},
+  "data": {
+    "url": "https://vega.github.io/vega/data/world-110m.json",
+    "format": {"type": "topojson", "feature": "countries"}
+  },
+
+  
+
+  
+  "transform": [
+    {
+      "lookup": "id",
+      "from": {
+        "data": {
+          "values": [
+            {"id": 840, "Country": "United States", "Bronze": 343, "Gold": 641, "Silver": 406, "Total": 1390},
+    {"id": 643, "Country": "Russia", "Bronze": 262, "Gold": 234, "Silver": 239, "Total": 735},
+    {"id": 276, "Country": "Germany", "Bronze": 227, "Gold": 195, "Silver": 157, "Total": 579},
+    {"id": 156, "Country": "China", "Bronze": 171, "Gold": 287, "Silver": 199, "Total": 657},
+    {"id": 36, "Country": "Australia", "Bronze": 258, "Gold": 157, "Silver": 218, "Total": 633},
+    {"id": 124, "Country": "Canada", "Bronze": 147, "Gold": 55, "Silver": 59, "Total": 261},
+    {"id": 826, "Country": "United Kingdom", "Bronze": 171, "Gold": 201, "Silver": 178, "Total": 550},
+    {"id": 250, "Country": "France", "Bronze": 127, "Gold": 161, "Silver": 161, "Total": 449},
+    {"id": 392, "Country": "Japan", "Bronze": 154, "Gold": 136, "Silver": 133, "Total": 423},
+    {"id": 380, "Country": "Italy", "Bronze": 150, "Gold": 78, "Silver": 134, "Total": 362},
+    {"id": 528, "Country": "Netherlands", "Bronze": 75, "Gold": 106, "Silver": 142, "Total": 323},
+    {"id": 410, "Country": "South Korea", "Bronze": 93, "Gold": 100, "Silver": 62, "Total": 255},
+    {"id": 76, "Country": "Brazil", "Bronze": 59, "Gold": 111, "Silver": 112, "Total": 282},
+    {"id": 724, "Country": "Spain", "Bronze": 89, "Gold": 29, "Silver": 160, "Total": 278},
+    {"id": 752, "Country": "Sweden", "Bronze": 10, "Gold": 15, "Silver": 78, "Total": 103},
+    {"id": 578, "Country": "Norway", "Bronze": 39, "Gold": 41, "Silver": 8, "Total": 88},
+    {"id": 32, "Country": "Argentina", "Bronze": 80, "Gold": 70, "Silver": 34, "Total": 184},
+    {"id": 348, "Country": "Hungary", "Bronze": 55, "Gold": 73, "Silver": 38, "Total": 166},
+    {"id": 804, "Country": "Ukraine", "Bronze": 85, "Gold": 30, "Silver": 33, "Total": 148},
+    {"id": 192, "Country": "Cuba", "Bronze": 48, "Gold": 52, "Silver": 50, "Total": 150},
+    {"id": 246, "Country": "Finland", "Bronze": 9, "Gold": 1, "Silver": 5, "Total": 15},
+    {"id": 554, "Country": "New Zealand", "Bronze": 37, "Gold": 52, "Silver": 60, "Total": 149},
+    {"id": 756, "Country": "Switzerland", "Bronze": 20, "Gold": 15, "Silver": 13, "Total": 48},
+    {"id": 208, "Country": "Denmark", "Bronze": 41, "Gold": 47, "Silver": 47, "Total": 135},
+    {"id": 688, "Country": "Serbia", "Bronze": 60, "Gold": 30, "Silver": 43, "Total": 133},
+    {"id": 40, "Country": "Austria", "Bronze": 10, "Gold": 4, "Silver": 6, "Total": 20},
+    {"id": 616, "Country": "Poland", "Bronze": 33, "Gold": 29, "Silver": 34, "Total": 96},
+    {"id": 203, "Country": "Czech Republic", "Bronze": 28, "Gold": 14, "Silver": 20, "Total": 62},
+    {"id": 191, "Country": "Croatia", "Bronze": 26, "Gold": 42, "Silver": 28, "Total": 96},
+    {"id": 388, "Country": "Jamaica", "Bronze": 33, "Gold": 39, "Silver": 31, "Total": 103},
+    {"id": 642, "Country": "Romania", "Bronze": 43, "Gold": 36, "Silver": 23, "Total": 102},
+    {"id": 112, "Country": "Belarus", "Bronze": 42, "Gold": 15, "Silver": 32, "Total": 89},
+    {"id": 300, "Country": "Greece", "Bronze": 16, "Gold": 13, "Silver": 35, "Total": 64},
+    {"id": 484, "Country": "Mexico", "Bronze": 35, "Gold": 18, "Silver": 11, "Total": 64},
+    {"id": 398, "Country": "Kazakhstan", "Bronze": 33, "Gold": 13, "Silver": 14, "Total": 60},
+    {"id": 56, "Country": "Belgium", "Bronze": 12, "Gold": 24, "Silver": 23, "Total": 59},
+    {"id": 404, "Country": "Kenya", "Bronze": 15, "Gold": 19, "Silver": 22, "Total": 56},
+    {"id": 566, "Country": "Nigeria", "Bronze": 34, "Gold": null, "Silver": 17, "Total": 51},
+    {"id": 31, "Country": "Azerbaijan", "Bronze": 28, "Gold": 5, "Silver": 14, "Total": 47},
+    {"id": 710, "Country": "South Africa", "Bronze": 18, "Gold": 13, "Silver": 15, "Total": 46},
+    {"id": 703, "Country": "Slovakia", "Bronze": 14, "Gold": 11, "Silver": 15, "Total": 40},
+    {"id": 100, "Country": "Bulgaria", "Bronze": 26, "Gold": 10, "Silver": 5, "Total": 41},
+    {"id": 792, "Country": "Turkey", "Bronze": 22, "Gold": 9, "Silver": 13, "Total": 44},
+    {"id": 242, "Country": "Fiji", "Bronze": 13, "Gold": 26, "Silver": null, "Total": 39},
+    {"id": 705, "Country": "Slovenia", "Bronze": 10, "Gold": 6, "Silver": 8, "Total": 24},
+    {"id": 214, "Country": "Dominican Republic", "Bronze": 26, "Gold": 3, "Silver": 9, "Total": 38},
+    {"id": 158, "Country": "Chinese Taipei", "Bronze": 19, "Gold": 6, "Silver": 11, "Total": 36},
+    {"id": 356, "Country": "India", "Bronze": 28, "Gold": 2, "Silver": 6, "Total": 36},
+    {"id": 364, "Country": "Iran", "Bronze": 12, "Gold": 13, "Silver": 10, "Total": 35},
+    {"id": 231, "Country": "Ethiopia", "Bronze": 14, "Gold": 11, "Silver": 8, "Total": 33},
+    {"id": 860, "Country": "Uzbekistan", "Bronze": 16, "Gold": 11, "Silver": 5, "Total": 32},
+    {"id": 268, "Country": "Georgia", "Bronze": 11, "Gold": 10, "Silver": 11, "Total": 32},
+    {"id": 428, "Country": "Latvia", "Bronze": 4, "Gold": 6, "Silver": 5, "Total": 15},
+    {"id": 170, "Country": "Colombia", "Bronze": 11, "Gold": 4, "Silver": 10, "Total": 25},
+    {"id": 360, "Country": "Indonesia", "Bronze": 10, "Gold": 7, "Silver": 7, "Total": 24},
+    {"id": 233, "Country": "Estonia", "Bronze": 8, "Gold": 5, "Silver": 4, "Total": 17},
+    {"id": 408, "Country": "North Korea", "Bronze": 8, "Gold": 8, "Silver": 8, "Total": 24},
+    {"id": 764, "Country": "Thailand", "Bronze": 8, "Gold": 8, "Silver": 7, "Total": 23},
+    {"id": 440, "Country": "Lithuania", "Bronze": 10, "Gold": 3, "Silver": 8, "Total": 21},
+    {"id": 44, "Country": "Bahamas", "Bronze": 7, "Gold": 8, "Silver": 6, "Total": 21},
+    {"id": 376, "Country": "Israel", "Bronze": 16, "Gold": 3, "Silver": null, "Total": 19},
+    {"id": 372, "Country": "Ireland", "Bronze": 10, "Gold": 4, "Silver": 5, "Total": 19},
+    {"id": 780, "Country": "Trinidad and Tobago", "Bronze": 7, "Gold": 6, "Silver": 5, "Total": 18},
+    {"id": 51, "Country": "Armenia", "Bronze": 10, "Gold": 1, "Silver": 6, "Total": 17},
+    {"id": 818, "Country": "Egypt", "Bronze": 11, "Gold": 2, "Silver": 4, "Total": 17},
+    {"id": 600, "Country": "Paraguay", "Bronze": null, "Gold": null, "Silver": 17, "Total": 17},
+    {"id": 496, "Country": "Mongolia", "Bronze": 8, "Gold": 2, "Silver": 6, "Total": 16},
+    {"id": 458, "Country": "Malaysia", "Bronze": 4, "Gold": null, "Silver": 10, "Total": 14},
+    {"id": 352, "Country": "Iceland", "Bronze": null, "Gold": null, "Silver": 14, "Total": 14},
+    {"id": 499, "Country": "Montenegro", "Bronze": null, "Gold": null, "Silver": 14, "Total": 14},
+    {"id": 620, "Country": "Portugal", "Bronze": 4, "Gold": 2, "Silver": 6, "Total": 12},
+    {"id": 344, "Country": "Hong Kong", "Bronze": 6, "Gold": 1, "Silver": 4, "Total": 11},
+    {"id": 862, "Country": "Venezuela", "Bronze": 5, "Gold": 2, "Silver": 4, "Total": 11}        
+          ]
+        },
+        "key": "id",
+        "fields": ["Country", "Total", "Gold", "Silver", "Bronze"]
+      }
+    }
+  ],
+  "projection": {"type": "identity", "reflectY": true},
+  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5},
+  "encoding": {
+    "color": {
+      "field": "Total",
+      "type": "quantitative",
+      "legend": {"title": "Total Medals"},
+      "scale": {"domain": [0, 1700], "range": ["#CD7F32", "#FFD700"]}
+    },
+    "tooltip": [
+      {"field": "Country", "type": "nominal", "title": "Country"},
+      {"field": "Total", "type": "quantitative", "title": "Total Medals"},
+      {"field": "Gold", "type": "quantitative", "title": "Gold Medals"},
+      {"field": "Silver", "type": "quantitative", "title": "Silver Medals"},
+      {"field": "Bronze", "type": "quantitative", "title": "Bronze Medals"}
+    ]
+  }
+}

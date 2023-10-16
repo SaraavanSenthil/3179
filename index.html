@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">  
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+        <script src="vega_lite_vis.js"></script>
+        <title>From Athens to Tokyo: A Data Kaleidoscope of Olympic Triumphs</title>
+    </head>
+<body>
+    
+
+    
+    
+    <div class="middle-section-container">    
+<div class="middle-section">
+
+    <div class="navbar">
+        <a href="#map" ><b>Medal Tally</b></a>
+        <a href="#stacked_bar_chart"><b>Performance</b></a>
+        <a href="#diverging_bar"><b>Medal Distribution By Gender</b></a>
+        <a href="#boxplot"><b>Age Spectrum</b></a>
+        <a href="#side_by_side_chart"><b>Age And Glory</b></a>
+        <a href="#scatterplot"><b>Medals Across Ages</b></a>
+        <a href="#horizontal_bar"><b>Top Performing Athletes</b></a>
+        
+        
+    </div>
+    <h1>From Athens to Tokyo: A Data Kaleidoscope of Olympic Triumphs</h1>
+    <h2>The Athletic Saga: An Analytical Glimpse into Medals, Nations, and Champions from 2004 to 2020</h2>
+
+    <div class="cover-container">
+        <div class="chart-title">Welcome to the Olympic Data Analysis</div>
+        <div class="cover-description">
+            <p>Embark on a captivating expedition through the spirited realm of <span style="color: #8A2BE2;">Olympic</span> competitions, unraveling the tapestry of athletic excellence showcased over the recent quintet of years. As the cauldron of cultures, nations, and indomitable spirits convene on the global stage, a saga of perseverance, camaraderie, and the ceaseless quest for glory unfolds. Our analysis delves into the heart of this international conclave, offering a vivid tableau of the <span style="color: #FFD700;">nations'</span> performances, their ascents, and ebbs in this grand theatre of dreams. Each graph, each chart, is more than mere numbers; they are a reflection of sweat, of tears, of the resolve that propels athletes to transcend boundaries, to defy the odds. The pages ahead promise a blend of insightful data, stirring visuals, and a celebration of the <span style="color: #FF4500;">Olympic</span> spirit that binds us all in a unique tapestry of hope, endeavor, and a shared love for the sportsmanship ideals.</p>
+        </div>
+    </div>
+    
+    <div class="chart-container">
+        <div class="chart-title">Olympic Medal Tally 2004-2020</div>
+        <div id="map"></div>
+        <div class="chart-description">
+            <div class="column">
+                <p>The medal tally highlights the dominance of certain nations in the Summer Olympics over the given period. Notably, the <span style="color: blue;">United States</span> leads the tally with a remarkable total of 1390 medals, out of which 641 are Gold, 406 are Silver, and 343 are Bronze. <span style="color: red;">Russia</span> and <span style="color: green;">Germany</span> secure the subsequent positions with total medals of 735 and 579 respectively. <span style="color: orange;">China</span> is not far behind with a total of 657 medals, displaying a strong competition among these nations.                   
+                    </p>
+            </div>
+            <div class="column">
+                <p>In the subsequent ranks, countries like <span style="color: purple;">Australia</span>, <span style="color: brown;">United Kingdom</span>, and <span style="color: rgb(119, 2, 253);">France</span> have also showcased significant performances with total medals of 633, 550, and 449 respectively. Among the top contenders, there's a noticeable gender balance in medal acquisition, which reflects a level of gender parity in these nations' athletic prowess. On the other hand, nations like <span style="color: olive;">Canada</span> and <span style="color: teal;">Japan</span> have a relatively lower tally but still hold a respectable position in the global arena with total medals of 261 and 423 respectively. </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="chart-container">
+        <div class="chart-title">Olympic Performance of Top 10 Countries</div>
+        <div id="stacked_bar_chart"></div>
+        <div class="chart-description">
+            <div class="column">
+                <p>The data illustrates a compelling story of nations striving for excellence in the global arena over the span of the last five Summer Olympics from 2004 to 2020. The <span style="color: #1c56ac;">United States</span> consistently dominates the medal tally across these editions, with a noticeable spike in medals in 2008, amassing 317 medals, and maintaining a high level of performance in the subsequent editions. The medal count for the <span style="color: #d41243;">Russia</span> notably dips in 2016, perhaps reflecting the impact of various international controversies. On the other hand, <span style="color: #de541e;">China</span>'s performance peaked in 2008 with 184 medals, coinciding with the year they hosted the Olympics, and has since seen a moderate decline, yet still maintaining a strong presence in the competitions.</p>
+            </div>
+            <div class="column">
+                <p>In the Southern Hemisphere, <span style="color: #FF4500;">Australia</span> showcased a remarkable performance in 2004 and 2008, with a slight dip in 2016. European powerhouses like <span style="color: #003366;">Germany</span>, <span style="color: #004225;">Great Britain</span>, and <span style="color: #0055A4;">France</span> show varied trajectories, with Great Britain notably ramping up its performance significantly from 2004 to 2016. <span style="color: #EF4135;">Italy</span> and the <span style="color: #21468B;">Netherlands</span> have had a more steady performance over the years, while <span style="color: #bc002d;">Japan</span> exhibited a remarkable improvement in 2020, possibly spurred by the home ground advantage. The diverse trends underscore the ever-evolving competitive landscape of the Olympics, reflecting not just the athletes' indefatigable spirit, but also the geopolitical and economic factors that might be at play in shaping the sporting prowess of nations.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <div class="chart-title">Medal Distribution based on Gender</div>
+        <div id="diverging_bar"></div>
+        <div class="chart-description">
+            <div class="column">
+                <p>The encapsulated data provides a panoramic view of gender-wise medal distribution among different countries over the span of the last five Summer Olympics. The <span style="color: #1c56ac;">United States</span> leads the charge with a total of 808 medals won by female athletes and 582 by male athletes, showcasing a substantial female dominance. Conversely, <span style="color: #d41243;">Russia</span> and <span style="color: #de541e;">China</span> follow suit, albeit with a lesser margin, with their female athletes bagging 407 and 428 medals respectively as opposed to 328 and 229 medals by their male counterparts. The gender disparity in medal count is a testament to the high level of competitiveness and excellence exhibited by female athletes, particularly in these leading nations.</p>
+            </div>
+            <div class="column">
+                <p>Venturing down under, <span style="color: #FF4500;">Australia</span> presents a more balanced gender-wise medal distribution with 303 medals for female athletes and 330 for male athletes. Similarly, European nations like <span style="color: #003366;">Germany</span>, <span style="color: #004225;">Great Britain</span>, and <span style="color: #0055A4;">France</span> display a notable balance in gender-wise medal acquisition, albeit with slight male dominance. Interestingly, <span style="color: #bc002d;">Japan</span> and the <span style="color: #21468B;">Netherlands</span> also reflect a balanced medal count among genders. The data reflects a riveting narrative of gender dynamics in the realm of global sports competitions, underpinning the evolving landscape of gender parity in athletic excellence across nations.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <div class="chart-title">Athletes Age Spectrum</div>
+        <div id="boxplot"></div>
+        <div class="chart-description">
+            <div class="column">
+                <p>The boxplot chart encapsulates a profound narrative of age distribution among athletes from the top ten medal-hoarding countries over the last five Summer Olympics. The chart unveils a spectrum of median ages nestled mostly in the mid-twenties, with <span style="color: #FF4500;">Australia</span>, <span style="color: #d52b1e;">Canada</span>, <span style="color: #de541e;">China</span>, <span style="color: #0055A4;">France</span>, <span style="color: #003366;">Germany</span>, <span style="color: #004225;">Great Britain</span>, <span style="color: #0033CC;">Italy</span>, <span style="color: #bc002d;">Japan</span>, <span style="color: #d41243;">Russia</span>, and <span style="color: #1c56ac;">United States</span> showcasing a median athletic age ranging from 24 to 38. The age diversity is indicative of the broad span of physical prowess and enduring competitiveness among athletes, transcending the age barrier.</p>
+            </div>
+            <div class="column">
+                <p>Peeling the layers of the boxplot further reveals the interquartile range, demarcating the age brackets within which the bulk of athletes from each country fall. A closer examination unveils <span style="color: #0033CC;">Italy</span> as an outlier with a higher median age of 38, signifying a possibly seasoned or veteran athletic contingent. On the other end of the spectrum, countries like <span style="color: #003366;">Germany</span> and <span style="color: #004225;">Great Britain</span> with lower median ages may indicate a younger, perhaps more dynamically evolving athletic cadre. The age distribution narrative accentuated by the boxplot provides a nuanced understanding of the age dynamics at play in the realm of international athletic competitions, portraying a rich tapestry of youthful vigor and seasoned expertise coalescing on the global stage.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <div class="chart-title">Average Age and Glory</div> 
+        <div id="side_by_side_chart"></div>
+        <div class="chart-description">
+            <div class="column">
+                <p>The data presented provides a rich visualization of the interplay between the age of athletes and their medal acquisition in the top ten countries over the last five Summer Olympics. A glance at the average age of gold medalists shows a younger trend with <span style="color: #FF4500;">China</span> leading the pack at 23.82 years followed closely by <span style="color: #FF4500;">Australia</span> at 24.51 years. On the other spectrum, <span style="color: #0055A4;">France</span> and <span style="color: #004225;">Great Britain</span> present a more matured golden glory with average ages of 28.91 and 28.23 years respectively. These figures not only reflect the countries' sporting culture but possibly also the nurturing and longevity of athletes in their sporting careers.</p>
+            </div>
+            <div class="column">
+                <p>Delving into the silver and bronze categories, a similar pattern follows. However, <span style="color: #0033CC;">Italy</span> breaks the mold with an average age of 28.68 for silver medalists, indicating a seasoned athletic cohort. Interestingly, the average age for bronze medalists in <span style="color: #FF4500;">Netherlands</span> peaks at 28.29 years, higher compared to its gold and silver counterparts. <span style="color: #1c56ac;">United States</span> maintains a consistent age range across all medal types, showing a well-distributed age group in its medal tally. This myriad of age distributions across medal colors and countries paints a vivid picture of the global athletic age landscape, bringing to light the diverse age groups that drive countries to the podium, and showcasing the blend of youthful vigor and seasoned expertise that shapes the international sporting arena.</p>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+    
+
+    <div class="chart-container">
+        <div class="chart-title">Medals Across Ages: The Journey from Youth to Experience</div>
+        <div id="scatterplot"></div>
+        <div class="chart-description">
+            <div class="column">
+                <p>The scatterplot data provides a narrative of athletes' journey from youthful debut to seasoned participation. A notable increase in medal acquisitions is observed as athletes mature, peaking in the early to mid-twenties for all medal types - Gold, Silver, and Bronze. Specifically, the age group 23-25 emerges as a critical period where athletes clinch the highest number of medals, particularly excelling in Gold and Silver categories. The resilience and high-spirited competition among the young athletes are mirrored in the escalating medal counts, depicting a phase of athletic prime and high-octane performances.</p>
+            </div>
+            <div class="column">
+                <p>As athletes transition through their late twenties and early thirties, a gradual tapering off in the medal count is evident, possibly indicating the challenges posed by advancing age or a shift towards other pursuits beyond competitive sports. However, the ember of competition continues to burn bright with a smattering of medals won even in the 40s and 50s age group, portraying a tapestry of enduring athletic prowess and a blend of skill, experience, and undying zeal. This journey not only maps the age-to-medal narrative but also subtly underscores the boundless opportunities that the realm of sports offers, transcending the barriers of age, and celebrating the indomitable spirit of athletes across the age spectrum.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <div class="chart-title">Top Performing Athletes</div>
+        <div id="horizontal_bar"></div>
+        <div class="chart-description">
+            <div class="column">
+                <p>The provided data unveils a striking narrative of top-performing athletes from various nations, showcasing a pinnacle of excellence across the Summer season. Leading the helm is <span style="color:blue">Michael Fred Phelps, II</span> from <span style="color:red">United States</span> with an astonishing haul of 29 medals from Summer Olympics. He is followed by <span style="color:blue">Fabian Hambchen</span> from <span style="color:red">Germany</span> and <span style="color:blue">Matteo Morandi</span> along with <span style="color:blue">Enrico Pozzo</span> from <span style="color:red">Italy</span>, boasting a collection of 26 and 22 medals respectively.</p>
+            </div>
+            <div class="column">
+                <p>The global representation of athletes underscores a rich tapestry of talent and indomitable spirit, transcending geographical boundaries. Nations like <span style="color:red">Italy</span> and <span style="color:red">Germany</span> showcase a dense cluster of top performers, elucidating a tradition of athletic prowess and a robust sports infrastructure. The likes of <span style="color:blue">Kohei Uchimura</span> from <span style="color:red">Japan</span>, <span style="color:blue">Yang Wei</span> from <span style="color:red">China</span>, and <span style="color:blue">Olga Alekseyevna Zaytseva</span> from <span style="color:red">Russia</span> further accentuate the diverse array of talent. The achievements of the athletes illuminates the boundless avenues for glory, irrespective of the season, heralding an era of unyielding passion and pursuit of excellence in the Olympic landscape.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="credits">
+        <p>Created By: Saraavan Senthil Kumar</p>
+        <p>Student ID: 30525276</p>
+        <p>Data: <a href="https://www.kaggle.com/datasets/nitishsharma01/olympics-124-years-datasettill-2020/" target="_blank">Summer Olympics Dataset</a></p>
+        <p>Designed using Vegalite, HTML and CSS</p>
+    </div>
+    
+    
+</div></div>
+
+</body>
+</html>

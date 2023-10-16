@@ -1,0 +1,87 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 680,
+  "height": 400,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+},
+    "data": {
+      "values": [
+        {"Country": "United States", "Year": 2020, "Value": 298},
+    {"Country": "United States", "Year": 2008, "Value": 317},
+    {"Country": "United States", "Year": 2016, "Value": 264},
+    {"Country": "United States", "Year": 2004, "Value": 263},
+    {"Country": "United States", "Year": 2012, "Value": 248},
+    {"Country": "Russia", "Year": 2020, "Value": 149},
+    {"Country": "Russia", "Year": 2008, "Value": 142},
+    {"Country": "Russia", "Year": 2016, "Value": 115},
+    {"Country": "Russia", "Year": 2004, "Value": 189},
+    {"Country": "Russia", "Year": 2012, "Value": 140},
+    {"Country": "China", "Year": 2020, "Value": 141},
+    {"Country": "China", "Year": 2008, "Value": 184},
+    {"Country": "China", "Year": 2016, "Value": 113},
+    {"Country": "China", "Year": 2004, "Value": 94},
+    {"Country": "China", "Year": 2012, "Value": 125},
+    {"Country": "Australia", "Year": 2020, "Value": 131},
+    {"Country": "Australia", "Year": 2008, "Value": 149},
+    {"Country": "Australia", "Year": 2016, "Value": 82},
+    {"Country": "Australia", "Year": 2004, "Value": 157},
+    {"Country": "Australia", "Year": 2012, "Value": 114},
+    {"Country": "Germany", "Year": 2020, "Value": 81},
+    {"Country": "Germany", "Year": 2008, "Value": 96},
+    {"Country": "Germany", "Year": 2016, "Value": 159},
+    {"Country": "Germany", "Year": 2004, "Value": 149},
+    {"Country": "Germany", "Year": 2012, "Value": 94},
+    {"Country": "Great Britain", "Year": 2020, "Value": 141},
+    {"Country": "Great Britain", "Year": 2008, "Value": 81},
+    {"Country": "Great Britain", "Year": 2016, "Value": 145},
+    {"Country": "Great Britain", "Year": 2004, "Value": 57},
+    {"Country": "Great Britain", "Year": 2012, "Value": 126},
+    {"Country": "France", "Year": 2020, "Value": 141},
+    {"Country": "France", "Year": 2008, "Value": 77},
+    {"Country": "France", "Year": 2016, "Value": 96},
+    {"Country": "France", "Year": 2004, "Value": 53},
+    {"Country": "France", "Year": 2012, "Value": 82},
+    {"Country": "Japan", "Year": 2020, "Value": 131},
+    {"Country": "Japan", "Year": 2008, "Value": 51},
+    {"Country": "Japan", "Year": 2016, "Value": 64},
+    {"Country": "Japan", "Year": 2004, "Value": 93},
+    {"Country": "Japan", "Year": 2012, "Value": 84},
+    {"Country": "Italy", "Year": 2020, "Value": 76},
+    {"Country": "Italy", "Year": 2008, "Value": 42},
+    {"Country": "Italy", "Year": 2016, "Value": 72},
+    {"Country": "Italy", "Year": 2004, "Value": 104},
+    {"Country": "Italy", "Year": 2012, "Value": 68},
+    {"Country": "Netherlands", "Year": 2020, "Value": 72},
+    {"Country": "Netherlands", "Year": 2008, "Value": 58},
+    {"Country": "Netherlands", "Year": 2016, "Value": 47},
+    {"Country": "Netherlands", "Year": 2004, "Value": 77},
+    {"Country": "Netherlands", "Year": 2012, "Value": 69}
+      ]
+    },
+    "mark": {"type": "bar", "cornerRadiusTopLeft": 3, "cornerRadiusTopRight": 3},
+    "encoding": {
+      "x": {"field": "Year", "type": "ordinal", "axis": {"title": "Year"}},
+      "y": {"field": "Value", "type": "quantitative", "axis": {"title": "Number of Medals"}, "stack": "zero"},
+      "color": {"field": "Country", "type": "nominal", "legend": {"title": "Country"}},
+      "tooltip": [
+        {
+            "field": "Country",
+            "type": "nominal",
+            "title": "Country"
+        },
+        {
+            "field": "Year",
+            "type": "ordinal",
+            "title": "Year"
+        },
+        {
+            "field": "Value",
+            "type": "quantitative",
+            "title": "Medals"
+        }
+    ]
+    }
+  }
+  

@@ -1,0 +1,79 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 660,
+    "height": 500,
+    "autosize": {
+        "type": "fit",
+        "contains": "padding"
+    },
+    "data": {
+        "values": [
+            {"Athlete": "Michael Fred Phelps, II", "Country": "United States", "Season": "Summer", "Total Medals": 29},
+            {"Athlete": "Fabian Hambchen", "Country": "Germany", "Season": "Summer", "Total Medals": 26},
+            {"Athlete": "Matteo Morandi", "Country": "Italy", "Season": "Summer", "Total Medals": 22},
+            {"Athlete": "Enrico Pozzo", "Country": "Italy", "Season": "Summer", "Total Medals": 22},
+            {"Athlete": "Kohei Uchimura", "Country": "Japan", "Season": "Summer", "Total Medals": 21},
+            {"Athlete": "Marcel Van Minh Phuc Long Nguyen", "Country": "Germany", "Season": "Summer", "Total Medals": 20},
+            {"Athlete": "Evi Sachenbacher-Stehle", "Country": "Germany", "Season": "Winter", "Total Medals": 18},
+            {"Athlete": "Federica Pellegrini", "Country": "Italy", "Season": "Summer", "Total Medals": 18},
+            {"Athlete": "Yang Wei", "Country": "China", "Season": "Summer", "Total Medals": 17},
+            {"Athlete": "Samuel Bode Miller", "Country": "United States", "Season": "Winter", "Total Medals": 17},
+            {"Athlete": "Chimene Mary \"Chemmy\" Alcott (-Crawford)", "Country": "Great Britain", "Season": "Winter", "Total Medals": 17},
+            {"Athlete": "Alberto Busnari", "Country": "Italy", "Season": "Summer", "Total Medals": 17},
+            {"Athlete": "Olga Alekseyevna Zaytseva (-Augustin)", "Country": "Russia", "Season": "Winter", "Total Medals": 16},
+            {"Athlete": "Matteo Angioletti", "Country": "Italy", "Season": "Summer", "Total Medals": 16},
+            {"Athlete": "Michela Ponza", "Country": "Italy", "Season": "Winter", "Total Medals": 16},
+            {"Athlete": "Andrea Henkel (-Burke)", "Country": "Germany", "Season": "Winter", "Total Medals": 16},
+            {"Athlete": "Benoit Pierre Caranobe", "Country": "France", "Season": "Summer", "Total Medals": 16},
+            {"Athlete": "Vanessa Ferrari", "Country": "Italy", "Season": "Summer", "Total Medals": 15},
+            {"Athlete": "Maksim Igoryevich Devyatovsky", "Country": "Russia", "Season": "Summer", "Total Medals": 15},
+            {"Athlete": "Lin Chaopan", "Country": "China", "Season": "Summer", "Total Medals": 15}
+        ]
+    },
+    "transform": [  
+        {
+            "filter": "datum.Season === 'Summer'"
+        }],
+    "mark": "bar",
+    "encoding": {
+        "y": {
+            "field": "Athlete",
+            "type": "nominal",
+            "axis": {
+                "title": "Athlete"
+            },
+            "sort": {
+                "field": "Total Medals",
+                "order": "descending"
+            }
+        },
+        "x": {
+            "field": "Total Medals",
+            "type": "quantitative",
+            "axis": {
+                "title": "Total Medals"
+            }
+        },
+        "color": {
+            "field": "Season",
+            "type": "nominal",
+            "legend": null,
+            "scale": {
+                "domain": ["Summer", "Winter"],
+                "range": ["#FFD700", "#87CEFA"]
+            }
+        },
+        "tooltip": [
+            {
+                "field": "Country",
+                "type": "nominal",
+                "title": "Country"
+            },
+            {
+                "field": "Total Medals",
+                "type": "quantitative",
+                "title": "Total Medals"
+            }
+        ]
+    }
+}

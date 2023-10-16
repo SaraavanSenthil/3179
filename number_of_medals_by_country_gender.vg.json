@@ -1,0 +1,77 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 670,
+    "height": 450, 
+    "autosize": {
+      "type": "fit",
+      "contains": "padding"
+  },
+    "description": "A Diverging Stacked Bar Chart showing medals won by females and males from different countries",
+    "data": {
+      "values": [
+        {"Country": "United States", "Gender": "Female", "Medals": 808},
+    {"Country": "United States", "Gender": "Male", "Medals": 582},
+    {"Country": "Russia", "Gender": "Female", "Medals": 407},
+    {"Country": "Russia", "Gender": "Male", "Medals": 328},
+    {"Country": "China", "Gender": "Female", "Medals": 428},
+    {"Country": "China", "Gender": "Male", "Medals": 229},
+    {"Country": "Australia", "Gender": "Female", "Medals": 303},
+    {"Country": "Australia", "Gender": "Male", "Medals": 330},
+    {"Country": "Germany", "Gender": "Female", "Medals": 247},
+    {"Country": "Germany", "Gender": "Male", "Medals": 332},
+    {"Country": "Great Britain", "Gender": "Female", "Medals": 229},
+    {"Country": "Great Britain", "Gender": "Male", "Medals": 321},
+    {"Country": "France", "Gender": "Female", "Medals": 160},
+    {"Country": "France", "Gender": "Male", "Medals": 289},
+    {"Country": "Japan", "Gender": "Female", "Medals": 213},
+    {"Country": "Japan", "Gender": "Male", "Medals": 210},
+    {"Country": "Italy", "Gender": "Female", "Medals": 106},
+    {"Country": "Italy", "Gender": "Male", "Medals": 256},
+    {"Country": "Netherlands", "Gender": "Female", "Medals": 214},
+    {"Country": "Netherlands", "Gender": "Male", "Medals": 109}
+      ]
+    },
+    "transform": [
+      {
+        "joinaggregate": [{"op": "sum", "field": "Medals", "as": "country_total"}],
+        "groupby": ["Country"]
+      },
+      {
+        "calculate": "datum.Medals / datum.country_total",
+        "as": "gender_percentage"
+      }
+    ],
+    "encoding": {
+      "y": {"field": "Country", "type": "nominal", "axis": {"title": "Country"}},
+      "x": {"field": "gender_percentage", "type": "quantitative", "axis": {"title": "Percentage of Medals", "format": ".0%"}, "stack": "zero"},
+      "order": {"field": "Gender", "type": "ordinal", "sort": "ascending"}
+    }
+    ,
+    "layer": [
+      {
+        "mark": "bar",
+        "encoding": {
+          "color": {"field": "Gender", "type": "nominal", "scale": {"domain": ["Male", "Female"], "range": ["blue", "#AA07FE"]}, "legend": {"title": "Gender"}}
+        }
+      },
+      {
+        "mark": {"type": "text", "color": "#08FF08", "fontWeight": "bold", "fontSize": 14},
+        "encoding": {
+          "x": {
+            "field": "gender_percentage",
+            "type": "quantitative",
+            "axis": {"title": "Percentage of Medals", "format": ".0%"},
+            "stack": "zero",
+            "scale": {"domain": [0, 1]},
+            "bandPosition": 0.5
+          },
+          "text": {"field": "gender_percentage", "type": "quantitative", "format": ".0%"},
+          "tooltip": [
+            {"field": "Gender", "type": "nominal", "title": "Gender"},
+            {"field": "Medals", "type": "quantitative", "title": "Medals"}
+          ]
+          
+        }
+      }
+    ]
+  }
